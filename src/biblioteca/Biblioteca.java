@@ -21,6 +21,7 @@ public class Biblioteca {
     }
 
     // Leer los libros desde un archivo
+    @SuppressWarnings("unchecked")
     public void leerLibros(String archivo) {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(archivo))) {
             libros = (ArrayList<Libro>) ois.readObject();
