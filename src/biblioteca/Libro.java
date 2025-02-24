@@ -1,10 +1,18 @@
-public package biblioteca;
+import java.io.Serializable;
 
-class Libro {
+class Libro implements Serializable{
     private String titulo;
     private String autor;
     private int anioPublicacion;
     private int id;
+
+    public Libro(String titulo, String autor,int anioPublicacion, int id){
+        this.titulo = titulo;
+        this.autor = autor;
+        this.anioPublicacion = anioPublicacion;
+        this.id = id;
+
+    }
 
     public void setTitulo(String titulo){
         this.titulo = titulo;
@@ -29,5 +37,9 @@ class Libro {
     }
     public int getId(){
         return this.id;
+    }
+    @Override
+    public String toString(){
+        return " Titulo: "+ titulo +" Autor: " + autor + " Publicacion: "+ anioPublicacion+ " Id: "+ id;
     }
 }
